@@ -6,16 +6,19 @@
 
 {% block content %}
     <div class="grid grid-cols-5 gap-6">
-        <div class="col-span-3">
-            <img src="{{ item.image.url }}" class="rounded-xl">
+        <div class="col-span-3 shadow-2xl rounded-xl">
+            <img src="{{ item.image.url }}" class="rounded-xl pr-10">
         </div>
 
-        <div class="col-span-2">
-            <h1 class="mb-6 text-5xl font-bold">{{ item.name }}</h2>
-            <p class="text-gray-500 text-2xl font-bold">Price: AED {{ item.price }}</p>
-            <p class="text-gray-500 pb-10 pt-1">Category: {{ item.category }}</p>
-            <p class="text-gray-500 pb-10 text-xl">Seller: {{ item.seller }}</p>
-            <p class="text-gray-500">Description: {{ item.description }}</p>
+        
+        <div class="col-span-2 p-6 bg-gray-100 rounded-xl shadow-2xl">
+            <h1 class="mb-6 text-5xl font-bold pt-3">{{ item.name }}</h2>
+            <p class="text-gray-500 text-2xl"><strong>Price: </strong>AED {{ item.price }}</p>
+            <p class="text-gray-500 pb-10 pt-1"><strong>Category: </strong>{{ item.category }}</p>
+            <p class="text-gray-500 pb-10 text-xl"><strong>Seller: </strong>{{ item.createdBy.username }}</p>
+            {% if item.description %}
+                <p class="text-gray-500"><strong>Description: </strong>{{ item.description }}</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
