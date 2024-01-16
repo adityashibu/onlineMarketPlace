@@ -15,4 +15,13 @@ class NewItemForm(forms.ModelForm):
             'name': forms.TextInput(attrs={
                 'class': 'w-full py-4 px-6 rounded-xl border'
             }),
+            'description': forms.TextInput(attrs={
+                'class': 'w-full py-4 px-6 rounded-xl border'
+            }),
+            'price': forms.TextInput(attrs={
+                'class': 'w-full py-4 px-6 rounded-xl border'
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'w-full py-4 px-6 rounded-xl border'
+            }),
         }
